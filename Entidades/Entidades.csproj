@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="E_Citas.cs" />
+    <Compile Include="E_CitasServicios.cs" />
     <Compile Include="E_Clientes.cs" />
     <Compile Include="E_Empleados.cs" />
+    <Compile Include="E_Facturas.cs" />
     <Compile Include="E_Persona.cs" />
     <Compile Include="E_Servicios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -51,5 +51,10 @@ namespace Presentacion
         {
             FormulariosFijo(new FrmCrud_Citas());
         }
+
+        private void btnFactura_Click(object sender, EventArgs e)
+        {
+            FormulariosFijo(new FrmFactura());
+        }
     }
 }

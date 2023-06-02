@@ -46,6 +46,10 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.clbServicios = new System.Windows.Forms.CheckedListBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.txtBuscarCliente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,6 +62,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnCrearFactura = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tbpCitas.SuspendLayout();
@@ -90,6 +95,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel2.Controls.Add(this.btnCrearFactura);
             this.panel2.Controls.Add(this.btn_Salir);
             this.panel2.Controls.Add(this.btn_Nuevo);
             this.panel2.Controls.Add(this.btn_Reporte);
@@ -141,6 +147,7 @@
             this.btn_Actualizar.TabIndex = 10;
             this.btn_Actualizar.Text = "Actualizar";
             this.btn_Actualizar.UseVisualStyleBackColor = true;
+            this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
             // 
             // btn_Eliminar
             // 
@@ -152,6 +159,7 @@
             this.btn_Eliminar.TabIndex = 11;
             this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.UseVisualStyleBackColor = false;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // tbpCitas
             // 
@@ -259,6 +267,10 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage2.Controls.Add(this.txtTotal);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.clbServicios);
             this.tabPage2.Controls.Add(this.btnBuscarCliente);
             this.tabPage2.Controls.Add(this.txtBuscarCliente);
             this.tabPage2.Controls.Add(this.label2);
@@ -277,6 +289,50 @@
             this.tabPage2.Size = new System.Drawing.Size(763, 335);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(569, 273);
+            this.txtTotal.MaxLength = 12;
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(124, 23);
+            this.txtTotal.TabIndex = 47;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label5.Location = new System.Drawing.Point(498, 276);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 20);
+            this.label5.TabIndex = 45;
+            this.label5.Text = "Total:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label4.Location = new System.Drawing.Point(560, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 23);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Servicios";
+            // 
+            // clbServicios
+            // 
+            this.clbServicios.CheckOnClick = true;
+            this.clbServicios.Enabled = false;
+            this.clbServicios.FormattingEnabled = true;
+            this.clbServicios.Location = new System.Drawing.Point(503, 35);
+            this.clbServicios.Name = "clbServicios";
+            this.clbServicios.Size = new System.Drawing.Size(190, 184);
+            this.clbServicios.TabIndex = 44;
+            this.clbServicios.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbServicios_ItemCheck);
             // 
             // btnBuscarCliente
             // 
@@ -348,6 +404,17 @@
             this.cmbHoras.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHoras.Enabled = false;
             this.cmbHoras.FormattingEnabled = true;
+            this.cmbHoras.Items.AddRange(new object[] {
+            "8:00  am",
+            "9:00  am",
+            "10:00  am",
+            "11:00  am",
+            "1:00 pm",
+            "2:00 pm",
+            "3:00 pm",
+            "4:00 pm",
+            "5:00 pm",
+            ""});
             this.cmbHoras.Location = new System.Drawing.Point(130, 71);
             this.cmbHoras.Name = "cmbHoras";
             this.cmbHoras.Size = new System.Drawing.Size(225, 21);
@@ -387,25 +454,37 @@
             this.btnGuardar.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnGuardar.Enabled = false;
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(411, 268);
+            this.btnGuardar.Location = new System.Drawing.Point(257, 266);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(90, 37);
             this.btnGuardar.TabIndex = 21;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.SteelBlue;
             this.btnCancelar.Enabled = false;
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(284, 268);
+            this.btnCancelar.Location = new System.Drawing.Point(130, 266);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(90, 37);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnCrearFactura
+            // 
+            this.btnCrearFactura.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnCrearFactura.Location = new System.Drawing.Point(400, 15);
+            this.btnCrearFactura.Name = "btnCrearFactura";
+            this.btnCrearFactura.Size = new System.Drawing.Size(89, 45);
+            this.btnCrearFactura.TabIndex = 14;
+            this.btnCrearFactura.Text = "Crear Factura";
+            this.btnCrearFactura.UseVisualStyleBackColor = true;
+            this.btnCrearFactura.Click += new System.EventHandler(this.btnCrearFactura_Click);
             // 
             // FrmCrud_Citas
             // 
@@ -461,5 +540,10 @@
         private System.Windows.Forms.ComboBox cmbClientes;
         private System.Windows.Forms.ComboBox cmbEmpleado;
         private System.Windows.Forms.ComboBox cmbHoras;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckedListBox clbServicios;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnCrearFactura;
     }
 }

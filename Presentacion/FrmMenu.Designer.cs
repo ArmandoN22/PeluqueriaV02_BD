@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCitas = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnServicios = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelFormularioFijo = new System.Windows.Forms.Panel();
-            this.btnCitas = new System.Windows.Forms.Button();
+            this.btnFactura = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -45,6 +46,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel1.Controls.Add(this.btnFactura);
             this.panel1.Controls.Add(this.btnCitas);
             this.panel1.Controls.Add(this.btnClientes);
             this.panel1.Controls.Add(this.btnServicios);
@@ -56,6 +58,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(220, 535);
             this.panel1.TabIndex = 0;
+            // 
+            // btnCitas
+            // 
+            this.btnCitas.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCitas.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCitas.ForeColor = System.Drawing.Color.LightYellow;
+            this.btnCitas.Location = new System.Drawing.Point(0, 261);
+            this.btnCitas.Name = "btnCitas";
+            this.btnCitas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnCitas.Size = new System.Drawing.Size(220, 48);
+            this.btnCitas.TabIndex = 3;
+            this.btnCitas.Text = "Citas";
+            this.btnCitas.UseVisualStyleBackColor = false;
+            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
             // 
             // btnClientes
             // 
@@ -135,20 +152,20 @@
             this.panelFormularioFijo.Size = new System.Drawing.Size(793, 535);
             this.panelFormularioFijo.TabIndex = 1;
             // 
-            // btnCitas
+            // btnFactura
             // 
-            this.btnCitas.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCitas.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCitas.ForeColor = System.Drawing.Color.LightYellow;
-            this.btnCitas.Location = new System.Drawing.Point(0, 261);
-            this.btnCitas.Name = "btnCitas";
-            this.btnCitas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCitas.Size = new System.Drawing.Size(220, 48);
-            this.btnCitas.TabIndex = 3;
-            this.btnCitas.Text = "Citas";
-            this.btnCitas.UseVisualStyleBackColor = false;
-            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
+            this.btnFactura.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFactura.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFactura.ForeColor = System.Drawing.Color.LightYellow;
+            this.btnFactura.Location = new System.Drawing.Point(0, 310);
+            this.btnFactura.Name = "btnFactura";
+            this.btnFactura.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnFactura.Size = new System.Drawing.Size(220, 48);
+            this.btnFactura.TabIndex = 4;
+            this.btnFactura.Text = "Factura";
+            this.btnFactura.UseVisualStyleBackColor = false;
+            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
             // 
             // FrmMenu
             // 
@@ -176,5 +193,6 @@
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnServicios;
         private System.Windows.Forms.Button btnCitas;
+        private System.Windows.Forms.Button btnFactura;
     }
 }
