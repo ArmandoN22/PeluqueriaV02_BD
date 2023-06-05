@@ -15,7 +15,7 @@ namespace Datos
         {
 
         }
-
+        // CONEXION
         public OracleConnection CrearConexion()
         {
             OracleConnection Cadena = new OracleConnection();
