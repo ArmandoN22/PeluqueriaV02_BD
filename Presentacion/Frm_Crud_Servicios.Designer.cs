@@ -35,7 +35,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.btn_Nuevo = new System.Windows.Forms.Button();
-            this.btn_Reporte = new System.Windows.Forms.Button();
             this.btn_Actualizar = new System.Windows.Forms.Button();
             this.btn_Eliminar = new System.Windows.Forms.Button();
             this.tbpServicios = new System.Windows.Forms.TabControl();
@@ -74,7 +73,6 @@
             this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel1.Controls.Add(this.btn_Salir);
             this.panel1.Controls.Add(this.btn_Nuevo);
-            this.panel1.Controls.Add(this.btn_Reporte);
             this.panel1.Controls.Add(this.btn_Actualizar);
             this.panel1.Controls.Add(this.btn_Eliminar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -104,16 +102,6 @@
             this.btn_Nuevo.Text = "Nuevo";
             this.btn_Nuevo.UseVisualStyleBackColor = true;
             this.btn_Nuevo.Click += new System.EventHandler(this.btn_Nuevo_Click);
-            // 
-            // btn_Reporte
-            // 
-            this.btn_Reporte.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btn_Reporte.Location = new System.Drawing.Point(305, 15);
-            this.btn_Reporte.Name = "btn_Reporte";
-            this.btn_Reporte.Size = new System.Drawing.Size(89, 45);
-            this.btn_Reporte.TabIndex = 12;
-            this.btn_Reporte.Text = "Reporte";
-            this.btn_Reporte.UseVisualStyleBackColor = true;
             // 
             // btn_Actualizar
             // 
@@ -357,14 +345,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Button btn_Nuevo;
-        private System.Windows.Forms.Button btn_Reporte;
         private System.Windows.Forms.Button btn_Actualizar;
         private System.Windows.Forms.Button btn_Eliminar;
         private System.Windows.Forms.TabControl tbpServicios;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgvServicios;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnGuardar;
@@ -373,5 +359,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.TextBox txtPrecio;
+        public System.Windows.Forms.DataGridView dgvServicios;
     }
 }

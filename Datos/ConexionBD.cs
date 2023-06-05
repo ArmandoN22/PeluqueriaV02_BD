@@ -23,7 +23,7 @@ namespace Datos
             {
                 Cadena.ConnectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=LAPTOP-O1445JB9)" +
                                           "(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xepdb1)))" +
-                                          ";User Id=PELUQUERIA;Password=1234;";
+                                          ";User Id=peluqueria2;Password=1234;";
             }
             catch (Exception ex)
             {

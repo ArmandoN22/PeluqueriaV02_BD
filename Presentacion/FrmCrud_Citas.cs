@@ -70,7 +70,7 @@ namespace Presentacion
             this.btn_Nuevo.Enabled = lEstado;
             this.btn_Actualizar.Enabled = lEstado;
             this.btn_Eliminar.Enabled = lEstado;
-            this.btn_Reporte.Enabled = lEstado;
+
             this.btn_Salir.Enabled = lEstado;
         }
 
@@ -126,35 +126,6 @@ namespace Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
-
-        private int ObtenerIdServicioSeleccionado()
-        {
-            if (clbServicios.SelectedItem != null)
-            {
-                // Obtener el valor seleccionado en función del ValueMember configurado
-                object selectedValue = clbServicios.SelectedValue;
-                int idServicio;
-                if (selectedValue != null && int.TryParse(selectedValue.ToString(), out idServicio))
-                {
-                    return idServicio;
-                }
-            }
-            
-                // No se ha seleccionado ningún servicio
-                return -1; // O cualquier otro valor que indique que no hay selección
-            
-        }
-
-        //public List<string> ObtenerServiciosSeleccionados(CheckedListBox clbServicios)
-        //{
-        //    List<string> serviciosSeleccionados = new List<string>();
-        //    foreach (var item in clbServicios.CheckedItems)
-        //    {
-        //        string servicio = item.ToString();
-        //        serviciosSeleccionados.Add(servicio);
-        //    }
-        //    return serviciosSeleccionados;
-        //}
 
 
         private void Guardar()
@@ -292,7 +263,7 @@ namespace Presentacion
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("¿Estás seguro de eliminar?", "Confirmación de eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("¿Estás seguro de eliminar esta Cita?", "Confirmación de eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
                     {
@@ -388,6 +359,7 @@ namespace Presentacion
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             Listado_cl(txtBuscarCliente.Text.Trim());
+            
         }
 
 
@@ -472,6 +444,11 @@ namespace Presentacion
         private void btnCrearFactura_Click(object sender, EventArgs e)
         {
             CrearFactura();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Mostrar(txtBuscar.Text.Trim());
         }
     }
 }

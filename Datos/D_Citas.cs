@@ -23,7 +23,7 @@ namespace Datos
             {
                 cTexto = "%" + cTexto + "%";
                 SqlCon = ConexionBD.getInstancia().CrearConexion();
-                OracleCommand Comando = new OracleCommand("select * from VISTA_CITAS where ID like '" + cTexto + "' ", SqlCon);
+                OracleCommand Comando = new OracleCommand("select * from VISTA_CITAS where ID_CLIENTE like '" + cTexto + "' ", SqlCon);
                 Comando.CommandType = CommandType.Text;
                 SqlCon.Open();
                 Resultado = Comando.ExecuteReader();
@@ -172,7 +172,7 @@ namespace Datos
             return Rpta;
         }
 
-        public string Actualizar(E_Citas oCi, List<int> serviciosSeleccionados)
+        public string Actualizar(E_Citas oCi, List<int> nuevosServicios)
         {
             string Rpta = "";
             string IdCi;
@@ -195,6 +195,45 @@ namespace Datos
                 IdCi = Convert.ToString(oCi.Id_Cita);
                 List<string> serviciosAsociadosString = ObtenerIdsServiciosAsociados(IdCi);
                 List<int> serviciosActuales = serviciosAsociadosString.ConvertAll(int.Parse);
+
+                List<int> serviciosAgregar = nuevosServicios.Except(serviciosActuales).ToList();
+                List<int> serviciosEliminar = serviciosActuales.Except(nuevosServicios).ToList();
+
+                // Agregar los nuevos servicios
+
+                if (serviciosAgregar.Count > 0)
+                {
+                    foreach (int idServicioAgregar in serviciosAgregar)
+                    {
+                        OracleCommand Comando2 = new OracleCommand("USP_GUARDAR_CS", SqlCon);
+                        Comando2.CommandType = CommandType.StoredProcedure;
+                        Comando2.Parameters.Add("pId_Cita_cs", OracleDbType.Int32).Value = IdCi;
+                        //int idSer = Convert.ToInt32(servicio);
+                        Comando2.Parameters.Add("pId_Servicio_cs", OracleDbType.Int32).Value = idServicioAgregar;
+                        Comando2.ExecuteNonQuery();
+                    }
+                }
+                else if (serviciosEliminar.Count > 0)
+                {
+                    // Eliminar los servicios que ya no se requieren
+                    try
+                    {
+                        foreach (int idServicioEliminar in serviciosEliminar)
+                        {
+                            OracleCommand Comando3 = new OracleCommand("USP_ELIMINAR_CS2", SqlCon);
+                            Comando3.CommandType = CommandType.StoredProcedure;
+                            Comando3.Parameters.Add("pId_Cita_cs", IdCi);
+                            Comando3.Parameters.Add("pId_Servicios_cs", idServicioEliminar);
+                            Comando3.ExecuteNonQuery();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+                }
+
 
                 //Obtener el valor del ID de la cita generado
                 //recibe = Convert.ToString(Comando.Parameters["pId_Cita"].Value);
@@ -224,33 +263,33 @@ namespace Datos
                 //}
 
                 // Agregar nuevos servicios y actualizar servicios existentes
-                foreach (int servicio in serviciosSeleccionados)
-                {
-                    if (serviciosActuales.Contains(servicio))
-                    {
-                        // Es un servicio existente, ejecutar comando de actualización en la tabla Citas_Servicios
-                        //OracleCommand Comando2 = new OracleCommand("USP_ACTUALIZAR_CS", SqlCon);
-                        //Comando2.CommandType = CommandType.StoredProcedure;
-                        //Comando2.Parameters.Add("pId_Cita_cs", OracleDbType.Int32).Value = oCi.Id_Cita;
-                        //Comando2.Parameters.Add("pId_Servicio_cs", OracleDbType.Int32).Value = servicio;
-                        //Comando2.ExecuteNonQuery();
-                        OracleCommand Comando2 = new OracleCommand("USP_ACTUALIZAR_CS", SqlCon);
-                        Comando2.CommandType = CommandType.StoredProcedure;
-                        Comando2.Parameters.Add("pId_Cita_cs", OracleDbType.Int32).Value = oCi.Id_Cita;
-                        int idSer = Convert.ToInt32(servicio);
-                        Comando2.Parameters.Add("pId_Servicio_cs", OracleDbType.Int32).Value = idSer;
-                        Comando2.ExecuteNonQuery();
-                    }
-                    else
-                    {
-                        // Es un nuevo servicio, ejecutar comando de inserción en la tabla Citas_Servicios
-                        OracleCommand Comando3 = new OracleCommand("USP_GUARDAR_CS", SqlCon);
-                        Comando3.CommandType = CommandType.StoredProcedure;
-                        Comando3.Parameters.Add("pId_Cita_cs", OracleDbType.Int32).Value = oCi.Id_Cita;
-                        Comando3.Parameters.Add("pId_Servicio_cs", OracleDbType.Int32).Value = servicio;
-                        Comando3.ExecuteNonQuery();
-                    }
-                }
+                //foreach (int servicio in nuevosServicios)
+                //{
+                //    if (serviciosActuales.Contains(servicio))
+                //    {
+                //        // Es un servicio existente, ejecutar comando de actualización en la tabla Citas_Servicios
+                //        //OracleCommand Comando2 = new OracleCommand("USP_ACTUALIZAR_CS", SqlCon);
+                //        //Comando2.CommandType = CommandType.StoredProcedure;
+                //        //Comando2.Parameters.Add("pId_Cita_cs", OracleDbType.Int32).Value = oCi.Id_Cita;
+                //        //Comando2.Parameters.Add("pId_Servicio_cs", OracleDbType.Int32).Value = servicio;
+                //        //Comando2.ExecuteNonQuery();
+                //        OracleCommand Comando2 = new OracleCommand("USP_ACTUALIZAR_CS", SqlCon);
+                //        Comando2.CommandType = CommandType.StoredProcedure;
+                //        Comando2.Parameters.Add("pId_Cita_cs", OracleDbType.Int32).Value = oCi.Id_Cita;
+                //        int idSer = Convert.ToInt32(servicio);
+                //        Comando2.Parameters.Add("pId_Servicio_cs", OracleDbType.Int32).Value = idSer;
+                //        Comando2.ExecuteNonQuery();
+                //    }
+                //    else
+                //    {
+                //        // Es un nuevo servicio, ejecutar comando de inserción en la tabla Citas_Servicios
+                //        OracleCommand Comando3 = new OracleCommand("USP_GUARDAR_CS", SqlCon);
+                //        Comando3.CommandType = CommandType.StoredProcedure;
+                //        Comando3.Parameters.Add("pId_Cita_cs", OracleDbType.Int32).Value = oCi.Id_Cita;
+                //        Comando3.Parameters.Add("pId_Servicio_cs", OracleDbType.Int32).Value = servicio;
+                //        Comando3.ExecuteNonQuery();
+                //    }
+                //}
 
 
 

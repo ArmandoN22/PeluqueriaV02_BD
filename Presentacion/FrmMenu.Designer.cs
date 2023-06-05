@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFactura = new System.Windows.Forms.Button();
             this.btnCitas = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnServicios = new System.Windows.Forms.Button();
@@ -37,10 +38,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelFormularioFijo = new System.Windows.Forms.Panel();
-            this.btnFactura = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelFormularioFijo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,6 +62,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(220, 535);
             this.panel1.TabIndex = 0;
+            // 
+            // btnFactura
+            // 
+            this.btnFactura.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFactura.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFactura.ForeColor = System.Drawing.Color.LightYellow;
+            this.btnFactura.Location = new System.Drawing.Point(0, 310);
+            this.btnFactura.Name = "btnFactura";
+            this.btnFactura.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnFactura.Size = new System.Drawing.Size(220, 48);
+            this.btnFactura.TabIndex = 4;
+            this.btnFactura.Text = "Factura";
+            this.btnFactura.UseVisualStyleBackColor = false;
+            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
             // 
             // btnCitas
             // 
@@ -145,6 +164,8 @@
             // panelFormularioFijo
             // 
             this.panelFormularioFijo.BackColor = System.Drawing.Color.White;
+            this.panelFormularioFijo.Controls.Add(this.pictureBox1);
+            this.panelFormularioFijo.Controls.Add(this.label3);
             this.panelFormularioFijo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormularioFijo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panelFormularioFijo.Location = new System.Drawing.Point(220, 0);
@@ -152,20 +173,27 @@
             this.panelFormularioFijo.Size = new System.Drawing.Size(793, 535);
             this.panelFormularioFijo.TabIndex = 1;
             // 
-            // btnFactura
+            // label3
             // 
-            this.btnFactura.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFactura.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFactura.ForeColor = System.Drawing.Color.LightYellow;
-            this.btnFactura.Location = new System.Drawing.Point(0, 310);
-            this.btnFactura.Name = "btnFactura";
-            this.btnFactura.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnFactura.Size = new System.Drawing.Size(220, 48);
-            this.btnFactura.TabIndex = 4;
-            this.btnFactura.Text = "Factura";
-            this.btnFactura.UseVisualStyleBackColor = false;
-            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label3.Location = new System.Drawing.Point(235, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(335, 49);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "PELUQUERIA AJ";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(182, 75);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(431, 448);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmMenu
             // 
@@ -179,6 +207,9 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelFormularioFijo.ResumeLayout(false);
+            this.panelFormularioFijo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -194,5 +225,7 @@
         private System.Windows.Forms.Button btnServicios;
         private System.Windows.Forms.Button btnCitas;
         private System.Windows.Forms.Button btnFactura;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
     }
 }

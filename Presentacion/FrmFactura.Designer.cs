@@ -41,13 +41,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnGenerarFactura = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCrearFactura = new System.Windows.Forms.Button();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.btn_Nuevo = new System.Windows.Forms.Button();
             this.btn_Reporte = new System.Windows.Forms.Button();
             this.btn_Eliminar = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
             this.panel2.SuspendLayout();
@@ -105,6 +105,7 @@
             this.btnBuscar.TabIndex = 30;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dgvFactura
             // 
@@ -174,8 +175,7 @@
             this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel3.Controls.Add(this.btnGenerarFactura);
             this.panel3.Controls.Add(this.btnSalir);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.btnEliminar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -185,12 +185,13 @@
             // btnGenerarFactura
             // 
             this.btnGenerarFactura.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnGenerarFactura.Location = new System.Drawing.Point(201, 15);
+            this.btnGenerarFactura.Location = new System.Drawing.Point(106, 15);
             this.btnGenerarFactura.Name = "btnGenerarFactura";
             this.btnGenerarFactura.Size = new System.Drawing.Size(98, 45);
             this.btnGenerarFactura.TabIndex = 14;
             this.btnGenerarFactura.Text = "Generar Factura";
             this.btnGenerarFactura.UseVisualStyleBackColor = true;
+            this.btnGenerarFactura.Click += new System.EventHandler(this.btnGenerarFactura_Click);
             // 
             // btnSalir
             // 
@@ -203,26 +204,17 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // button4
+            // btnEliminar
             // 
-            this.button4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button4.Location = new System.Drawing.Point(106, 15);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(89, 45);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Reporte";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Red;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(13, 15);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 45);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Eliminar";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnEliminar.BackColor = System.Drawing.Color.Red;
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(13, 15);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(87, 45);
+            this.btnEliminar.TabIndex = 11;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCrearFactura
             // 
@@ -275,6 +267,10 @@
             this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.UseVisualStyleBackColor = false;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.Imprimir);
+            // 
             // FrmFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,12 +308,12 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnGenerarFactura;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCrearFactura;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Button btn_Nuevo;
         private System.Windows.Forms.Button btn_Reporte;
         private System.Windows.Forms.Button btn_Eliminar;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

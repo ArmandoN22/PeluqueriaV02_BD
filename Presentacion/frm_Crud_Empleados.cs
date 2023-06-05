@@ -53,7 +53,7 @@ namespace Presentacion
             this.btn_Nuevo.Enabled = lEstado;
             this.btn_Actualizar.Enabled = lEstado;
             this.btn_Eliminar.Enabled = lEstado;
-            this.btn_Reporte.Enabled = lEstado;
+
             this.btn_Salir.Enabled = lEstado;
         }
 
@@ -185,7 +185,7 @@ namespace Presentacion
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("¿Estás seguro de eliminar?", "Confirmación de eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("¿Estás seguro de eliminar este Empleado?", "Confirmación de eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
                     {

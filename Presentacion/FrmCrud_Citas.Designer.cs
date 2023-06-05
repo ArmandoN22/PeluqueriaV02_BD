@@ -34,9 +34,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCrearFactura = new System.Windows.Forms.Button();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.btn_Nuevo = new System.Windows.Forms.Button();
-            this.btn_Reporte = new System.Windows.Forms.Button();
             this.btn_Actualizar = new System.Windows.Forms.Button();
             this.btn_Eliminar = new System.Windows.Forms.Button();
             this.tbpCitas = new System.Windows.Forms.TabControl();
@@ -62,7 +62,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnCrearFactura = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tbpCitas.SuspendLayout();
@@ -98,7 +97,6 @@
             this.panel2.Controls.Add(this.btnCrearFactura);
             this.panel2.Controls.Add(this.btn_Salir);
             this.panel2.Controls.Add(this.btn_Nuevo);
-            this.panel2.Controls.Add(this.btn_Reporte);
             this.panel2.Controls.Add(this.btn_Actualizar);
             this.panel2.Controls.Add(this.btn_Eliminar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -106,6 +104,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(777, 72);
             this.panel2.TabIndex = 20;
+            // 
+            // btnCrearFactura
+            // 
+            this.btnCrearFactura.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnCrearFactura.Location = new System.Drawing.Point(305, 15);
+            this.btnCrearFactura.Name = "btnCrearFactura";
+            this.btnCrearFactura.Size = new System.Drawing.Size(89, 45);
+            this.btnCrearFactura.TabIndex = 14;
+            this.btnCrearFactura.Text = "Crear Factura";
+            this.btnCrearFactura.UseVisualStyleBackColor = true;
+            this.btnCrearFactura.Click += new System.EventHandler(this.btnCrearFactura_Click);
             // 
             // btn_Salir
             // 
@@ -127,16 +136,6 @@
             this.btn_Nuevo.Text = "Nuevo";
             this.btn_Nuevo.UseVisualStyleBackColor = true;
             this.btn_Nuevo.Click += new System.EventHandler(this.btn_Nuevo_Click);
-            // 
-            // btn_Reporte
-            // 
-            this.btn_Reporte.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btn_Reporte.Location = new System.Drawing.Point(305, 15);
-            this.btn_Reporte.Name = "btn_Reporte";
-            this.btn_Reporte.Size = new System.Drawing.Size(89, 45);
-            this.btn_Reporte.TabIndex = 12;
-            this.btn_Reporte.Text = "Reporte";
-            this.btn_Reporte.UseVisualStyleBackColor = true;
             // 
             // btn_Actualizar
             // 
@@ -215,6 +214,7 @@
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dgvCitas
             // 
@@ -475,17 +475,6 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnCrearFactura
-            // 
-            this.btnCrearFactura.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnCrearFactura.Location = new System.Drawing.Point(400, 15);
-            this.btnCrearFactura.Name = "btnCrearFactura";
-            this.btnCrearFactura.Size = new System.Drawing.Size(89, 45);
-            this.btnCrearFactura.TabIndex = 14;
-            this.btnCrearFactura.Text = "Crear Factura";
-            this.btnCrearFactura.UseVisualStyleBackColor = true;
-            this.btnCrearFactura.Click += new System.EventHandler(this.btnCrearFactura_Click);
-            // 
             // FrmCrud_Citas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -518,7 +507,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Button btn_Nuevo;
-        private System.Windows.Forms.Button btn_Reporte;
         private System.Windows.Forms.Button btn_Actualizar;
         private System.Windows.Forms.Button btn_Eliminar;
         private System.Windows.Forms.TabControl tbpCitas;

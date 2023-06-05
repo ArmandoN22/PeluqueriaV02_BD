@@ -36,7 +36,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.btn_Nuevo = new System.Windows.Forms.Button();
-            this.btn_Reporte = new System.Windows.Forms.Button();
             this.btn_Actualizar = new System.Windows.Forms.Button();
             this.btn_Eliminar = new System.Windows.Forms.Button();
             this.tbpServicios = new System.Windows.Forms.TabControl();
@@ -92,7 +91,6 @@
             this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel2.Controls.Add(this.btn_Salir);
             this.panel2.Controls.Add(this.btn_Nuevo);
-            this.panel2.Controls.Add(this.btn_Reporte);
             this.panel2.Controls.Add(this.btn_Actualizar);
             this.panel2.Controls.Add(this.btn_Eliminar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -122,16 +120,6 @@
             this.btn_Nuevo.Text = "Nuevo";
             this.btn_Nuevo.UseVisualStyleBackColor = true;
             this.btn_Nuevo.Click += new System.EventHandler(this.btn_Nuevo_Click);
-            // 
-            // btn_Reporte
-            // 
-            this.btn_Reporte.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btn_Reporte.Location = new System.Drawing.Point(305, 15);
-            this.btn_Reporte.Name = "btn_Reporte";
-            this.btn_Reporte.Size = new System.Drawing.Size(89, 45);
-            this.btn_Reporte.TabIndex = 12;
-            this.btn_Reporte.Text = "Reporte";
-            this.btn_Reporte.UseVisualStyleBackColor = true;
             // 
             // btn_Actualizar
             // 
@@ -278,7 +266,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(717, 326);
+            this.tabPage2.Size = new System.Drawing.Size(757, 326);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             // 
@@ -445,7 +433,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Button btn_Nuevo;
-        private System.Windows.Forms.Button btn_Reporte;
         private System.Windows.Forms.Button btn_Actualizar;
         private System.Windows.Forms.Button btn_Eliminar;
         private System.Windows.Forms.TabControl tbpServicios;
