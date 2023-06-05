@@ -74,12 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConexionBD.cs" />
-    <Compile Include="D_Citas.cs" />
-    <Compile Include="D_Clientes.cs" />
-    <Compile Include="D_Empleados.cs" />
-    <Compile Include="D_Factura.cs" />
-    <Compile Include="D_Servicios.cs" />
+    <Compile Include="Conexion\ConexionBD.cs" />
+    <Compile Include="Repositorio\D_Citas.cs" />
+    <Compile Include="Repositorio\D_Clientes.cs" />
+    <Compile Include="Repositorio\D_Empleados.cs" />
+    <Compile Include="Repositorio\D_Factura.cs" />
+    <Compile Include="Repositorio\D_Servicios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

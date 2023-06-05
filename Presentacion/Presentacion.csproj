@@ -46,60 +46,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmCrud_Citas.cs">
+    <Compile Include="Frm_Citas\FrmCrud_Citas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCrud_Citas.Designer.cs">
+    <Compile Include="Frm_Citas\FrmCrud_Citas.Designer.cs">
       <DependentUpon>FrmCrud_Citas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmFactura.cs">
+    <Compile Include="Frm_Factura\FrmFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmFactura.Designer.cs">
+    <Compile Include="Frm_Factura\FrmFactura.Designer.cs">
       <DependentUpon>FrmFactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMenu.cs">
+    <Compile Include="Frm_Menu\FrmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMenu.Designer.cs">
+    <Compile Include="Frm_Menu\FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Crud_Clientes.cs">
+    <Compile Include="Frm_Clientes\Frm_Crud_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Crud_Clientes.Designer.cs">
+    <Compile Include="Frm_Clientes\Frm_Crud_Clientes.Designer.cs">
       <DependentUpon>Frm_Crud_Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Crud_Empleados.cs">
+    <Compile Include="Frm_Empleados\frm_Crud_Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Crud_Empleados.Designer.cs">
+    <Compile Include="Frm_Empleados\frm_Crud_Empleados.Designer.cs">
       <DependentUpon>frm_Crud_Empleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Crud_Servicios.cs">
+    <Compile Include="Frm_Servicios\Frm_Crud_Servicios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Crud_Servicios.Designer.cs">
+    <Compile Include="Frm_Servicios\Frm_Crud_Servicios.Designer.cs">
       <DependentUpon>Frm_Crud_Servicios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmCrud_Citas.resx">
+    <EmbeddedResource Include="Frm_Citas\FrmCrud_Citas.resx">
       <DependentUpon>FrmCrud_Citas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmFactura.resx">
+    <EmbeddedResource Include="Frm_Factura\FrmFactura.resx">
       <DependentUpon>FrmFactura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMenu.resx">
+    <EmbeddedResource Include="Frm_Menu\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Crud_Clientes.resx">
+    <EmbeddedResource Include="Frm_Clientes\Frm_Crud_Clientes.resx">
       <DependentUpon>Frm_Crud_Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Crud_Empleados.resx">
+    <EmbeddedResource Include="Frm_Empleados\frm_Crud_Empleados.resx">
       <DependentUpon>frm_Crud_Empleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Crud_Servicios.resx">
+    <EmbeddedResource Include="Frm_Servicios\Frm_Crud_Servicios.resx">
       <DependentUpon>Frm_Crud_Servicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

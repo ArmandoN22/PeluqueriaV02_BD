@@ -41,11 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="L_Citas.cs" />
-    <Compile Include="L_Clientes.cs" />
-    <Compile Include="L_Empleados.cs" />
-    <Compile Include="L_Factura.cs" />
-    <Compile Include="L_Servicios.cs" />
+    <Compile Include="Operaciones\Operaciones_Citas\L_Citas.cs" />
+    <Compile Include="Operaciones\Operaciones_Clientes\L_Clientes.cs" />
+    <Compile Include="Operaciones\Operaciones_Empleados\L_Empleados.cs" />
+    <Compile Include="Operaciones\Operaciones_Factura\L_Factura.cs" />
+    <Compile Include="Operaciones\Operaciones_Servicios\L_Servicios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,5 +61,6 @@
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
