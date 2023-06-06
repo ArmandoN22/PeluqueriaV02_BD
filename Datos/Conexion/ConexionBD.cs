@@ -15,7 +15,7 @@ namespace Datos
         {
 
         }
-        // CONEXION
+        //  CREAR CONEXION A LA BASE DE DATOSS
         public OracleConnection CrearConexion()
         {
             OracleConnection Cadena = new OracleConnection();
@@ -23,7 +23,7 @@ namespace Datos
             {
                 Cadena.ConnectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=LAPTOP-O1445JB9)" +
                                           "(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xepdb1)))" +
-                                          ";User Id=PRUEBA2;Password=1234;";
+                                          ";User Id=PELUQUERIA;Password=1234;";
             }
             catch (Exception ex)
             {
